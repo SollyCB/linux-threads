@@ -4,6 +4,8 @@ In the initial commit, I just copy-pasted his newthread asm implementation, but 
 demonstrating my own understanding by adding my own flair to someone else's work and so that I can mess with tls (it will be easier to
 work with a greater number of arguments in asm with clone3 than clone).
 
+*Please excuse my poor English in the above paragraphs: I am sleepy and hungry. I know it reads ugly and it will be refined.*
+
 # Playing with low level linux threads
 
 No pthread for this guy! - to paraphrase Peter Griffin.
