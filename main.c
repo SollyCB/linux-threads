@@ -19,10 +19,16 @@ struct gcc_align(16) stack_head {
   u64 join;
 };
 
+int fn3(void) {println("fn3, id = %u", ctx->id); sleep(1); return 1;}
+int fn2(void) {println("fn2, id = %u", ctx->id); sleep(1); fn3(); return 1;}
+int fn1(void) {println("fn1, id = %u", ctx->id); sleep(1); fn2(); return 1;}
+int fn0(void) {println("fn0, id = %u", ctx->id); sleep(1); fn1(); return 1;}
+
 void entry(struct stack_head maybe_unused *stack)
 {
   println("thread started!");
   println("thread context is %uh", ctx);
+  fn0();
   stack->join = 1;
   sleep(200);
 }
@@ -63,6 +69,8 @@ void fn(void)
 
   newthread(stack, &ctx_arr[1]);
 
+  fn0();
+
   _mm_mfence();
   sleep(1);
 
@@ -71,6 +79,7 @@ void fn(void)
 
 int main() {
   u64 fs = readfs();
+  println("fs = %uh", fs);
 
   writefs(&ctx_arr[0]);
   fn();
