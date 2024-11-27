@@ -1,0 +1,36 @@
+Hey! I just sent an email to your public inbox, but I wanted to send you
+another personally to say how grateful I am to experienced programmers
+like yourself who release useful resources for newer people like me to
+learn from.
+
+I am self-taught, so I completely rely on online resources and books to
+get an understanding of low-level software, and without guys like you,
+it would be infinitely harder to keep learning.
+
+It really is inspiring to read blog posts like yours [1], as they
+demonstrate a level of understanding and experience which I also aim to
+achieve.
+
+I doubt you would ever want to check out any of my stuff, but I will
+link my two best projects in case you ever want to take a look.
+Hopefully they demonstrate that the information that people like you
+release for free really helps and inspires less experienced people like
+me to work on projects that they find interesting and useful.
+
+My Vulkan rendering engine (some of the source will look a little ugly
+as I was much less experienced while I was working on it, but the
+outcome I think is still pretty cool):
+
+https://github.com/SollyCB/slug-cb-backup
+
+My C single header general library, inspired by stb.h (note that I
+rewrote it from scratch a few weeks ago since my old one was getting
+crufty, so some of the implementations are a bit funky as they have not
+been thoroughly tested on real projects yet in order to iron everything
+out, one example being the arena).
+
+https://github.com/SollyCB/windows-c-single-header
+
+
+
+[1] https://nullprogram.com/blog/2023/03/23/
