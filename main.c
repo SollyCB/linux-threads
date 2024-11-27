@@ -76,6 +76,6 @@ int main() {
   fn();
   println("out");
 
-  writefs(fs);
+  writefs(fs); // without this, gcc reports stack smash
   return 0;
 }
