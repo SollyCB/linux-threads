@@ -27,8 +27,7 @@ int fn0(void) {println("fn0, name = %s", ctx->name); sleep(1); fn1(); return 1;}
 void entry(struct stack_head maybe_unused *stack)
 {
   writegs(&ctx_arr[stack->thread_id]);
-  println("thread started!");
-  println("thread context is %uh", ctx);
+  println("thread started! context address is %uh", ctx);
   fn0();
   sleep(200);
 }
@@ -48,8 +47,8 @@ naked_fn static long newthread(struct clone_args maybe_unused *cl, u64 maybe_unu
   // RFLAGS gets stored into R11" (http://www.felixcloutier.com/x86/SYSCALL.html)
 }
 
-void fn(void)
-{
+int main() {
+
   writegs(&ctx_arr[0]);
 
   ctx_arr[0].name = "main";
@@ -74,16 +73,10 @@ void fn(void)
 
   fn0();
 
-  println("main context is %uh", ctx)
+  println("main context address is %uh", ctx)
 
   _mm_mfence();
   sleep(1);
-}
-
-int main() {
-
-  fn();
-  println("out");
 
   return 0;
 }
